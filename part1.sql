@@ -123,7 +123,7 @@ VALUES
 SELECT * FROM employees;
 
 --- Select specific data from employee table with different data types
-SELECT full_name,salary FROM employees
+SELECT full_name,salary FROM employees;
 
 -- Select specific data from employee table with different data types with condition
 -- 40000 er beshi salary thaka employee der name and salary show korbe!!!
