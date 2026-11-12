@@ -10,11 +10,8 @@ CREATE TABLE example_table(
         -- NUMERIC ,DECIMAL Financial data type (Exact numeric)  DECIMAL(precision, scale)  precision = total number of digits, scale = number of digits to the right of the decimal point
         
         -- doshomik er pore koto ghor niye kaj korbo sheta 
-
-        column3 DOUBLE(10.4),
+        column3 NUMERIC(10,4),
         -- DOUBLE,REAL, FLOAT (Approximate numeric)  DOUBLE(precision, scale)  precision = total number of digits, scale = number of digits to the right of the decimal point
-        
-
         column4 TEXT,
         -- CHAR(100) = variable length character string (100 characters)
          -- VARCHAR(100) = variable length character string (100 characters)
@@ -34,11 +31,11 @@ CREATE TABLE example_table(
 
           -- JSONB = Binary JSON (JSONB)  JSONB = Binary JSON (JSONB) ->Binary format for storing JSON data (Faster than JSON text data) 
 
-          column8 ARRAY, 
+          column8 TEXT[], 
           -- Collection
           -- ARRAY = Array data type (Array of values)  ARRAY = Array data type (Array of values)  ->Array of values (Can store multiple values in a single column)
 
-          column9 UUID,
+          column9 UUID
           -- Automatically generate unique number
           -- UUID = Universally Unique Identifier (UUID)  UUID = Universally Unique Identifier (UUID)  ->Universally Unique Identifier (UUID) (Unique identifier for a record)
 
@@ -94,7 +91,7 @@ CREATE TABLE demo_table(
   -- ARRAY = Array data type (Array of values)  ARRAY = Array data type (Array of values)  ->Array of values (Can store multiple values in a single column)
   -- DEFAULT value for the column (If no value is provided, the default value will be used)
 
-  unique_number UUID DEFAULT gen_random_uuid() UNIQUE,
+  unique_number UUID DEFAULT gen_random_uuid() UNIQUE
   -- Automatically generate unique number
 
 );
