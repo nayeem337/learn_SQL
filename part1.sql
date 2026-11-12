@@ -79,15 +79,24 @@ CREATE TABLE demo_table(
   -- Current time and date automatically generated when a new record is created
   -- DEFAULT value for the column (If no value is provided, the default value will be used)
 
-  profile1 JSONB DEFAULT '{}'::JSONB
+  profile1 JSONB DEFAULT '{}'::JSONB,
   --JSONB DEFAULT VALUE = '{}'::JSONB  (Empty JSON object as default value for the column)
 
- profile2 JSON DEFAULT '{}'::JSON
+  profile2 JSON DEFAULT '{}'::JSON,
 
   --  profile JSON DEFAULT '{}'
-  
+
   -- EMPTY JSON object as default value for the column (If no value is provided, the default value will be used)
   -- JSON = JavaScript Object Notation (JSON)  JSON = JavaScript Object Notation (JSON) ->JSON text data (Textual data format for storing and transporting data)
+
+ dress_color TEXT[] DEFAULT ARRAY[]::TEXT[],
+ -- DEFAULT []::TEXT[]  (Empty Array as default value for the column)
+  -- ARRAY = Array data type (Array of values)  ARRAY = Array data type (Array of values)  ->Array of values (Can store multiple values in a single column)
+  -- DEFAULT value for the column (If no value is provided, the default value will be used)
+
+  unique_number UUID DEFAULT gen_random_uuid() UNIQUE,
+  -- Automatically generate unique number
+
 
 
 
