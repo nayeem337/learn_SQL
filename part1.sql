@@ -97,13 +97,7 @@ CREATE TABLE demo_table(
   unique_number UUID DEFAULT gen_random_uuid() UNIQUE,
   -- Automatically generate unique number
 
-
-
-
-
-
-
-
-
-
 );
+
+
+
