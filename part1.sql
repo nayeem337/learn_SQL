@@ -177,6 +177,8 @@ VALUES ('Jannatul Nayeem',30000,'2026-01-15');
 -- SUBSTRING() = string data er specific part ke ber kore
 
 
+
+
 SELECT 
 
 full_name,
