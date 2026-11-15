@@ -111,45 +111,46 @@ VALUES ('Jannatul Nayeem',30000,'2026-01-15');
 */
 
 -- Multiple data insert into employee table with different data types
--- INSERT INTO employees (full_name,salary,date_of_joining)
--- VALUES 
--- ('Limon',30000,'2026-01-15'),
--- ('Arham',40000,'2025-12-01'),
--- ('Zunain',35000,'2026-02-20'),
--- ('Curt Kobain',45000,'2025-11-10'),
--- ('David Gilmore',32000,'2026-03-05');
+ INSERT INTO employees (full_name,salary,date_of_joining)
+ VALUES 
+ ('Limon',30000,'2026-01-15'),
+ ('Arham',40000,'2025-12-01'),
+ ('Zunain',35000,'2026-02-20'),
+ ('Curt Kobain',45000,'2025-11-10'),
+ ('David Gilmore',32000,'2026-03-05');
 
 -- Select all data from employee table with different data types
--- SELECT * FROM employees;
+ SELECT * FROM employees;
 
 --- Select specific data from employee table with different data types
--- SELECT full_name,salary FROM employees;
+SELECT full_name,salary FROM employees;
 
 -- Select specific data from employee table with different data types with condition
 -- 40000 er beshi salary thaka employee der name and salary show korbe!!!
--- SELECT full_name,salary FROM employees WHERE salary > 40000;
+ SELECT full_name,salary FROM employees WHERE salary > 40000;
 
 
 --- Data Update single column in employee table with different data types
 -- UPDATE employees 
--- SET salary = 80000 WHERE id=3;
+ SET salary = 80000 WHERE id=3;
 
 --- Data Update multiple column in employee table with different data types
 -- UPDATE employees 
--- SET salary = 90000,full_name = 'Limon' WHERE id=3;
+ SET salary = 90000,full_name = 'Limon' WHERE id=3;
 
 -- Delete single data from employee table with different data types
--- DELETE FROM employees WHERE id=10;
+ DELETE FROM employees WHERE id=10;
 
 --- Delete all data from employee table with different data types
--- DELETE FROM employees;
+ DELETE FROM employees;
 
 -- Turncate all data from employee table with different data types
 -- turncate table = delete all data from table and reset identity column (auto increment) to 1
--- TRUNCATE TABLE employees RESTART IDENTITY;
+ TRUNCATE TABLE employees RESTART IDENTITY;
 
 
 
+-------------------------------------------------------------------------------------------------------------
 
 
 
@@ -204,3 +205,26 @@ CONCAT(full_name,'-', salary,'-', date_of_joining) AS salary_name_date
 
 
 FROM employees;
+
+
+
+-- *** SQL Date Manipulations & Formating  ***
+
+-- TO_CHAR() = date data ke string e convert kore
+
+
+SELECT
+
+id,
+date_of_joining, --YYYY-MM-DD
+
+TO_CHAR(date_of_joining,'DD-MM-YYYY') AS dd_mm_yy, --DD-MM-YYYY
+TO_CHAR(date_of_joining,'DD/MM/YYYY') AS iso_date, --DD/MM/YYYY  
+TO_CHAR(date_of_joining,'DD Mon YYYY') AS short_month_date,  --DD Mon YYYY
+TO_CHAR(date_of_joining,'DD Month YYYY') AS full_month, --full month ashbe
+TO_CHAR(date_of_joining,'Day, DD Mon YYYY') AS full_readable -- 
+
+FROM employees;
+
+
+-------------------------------------------------------------------------------------------------------------
