@@ -165,6 +165,15 @@ VALUES ('Jannatul Nayeem',30000,'2026-01-15');
 -- CHAR_LENGTH() = string data er character length ber kore
 -- LENGTH() = string data er byte length ber kore
 -- REVERSE() = string data ke reverse kore
+-- TRIM() = string data er leading and trailing spaces remove kore
+-- LTRIM() = string data er leading spaces remove kore
+-- RTRIM() = string data er trailing spaces remove kore 
+-- (Both Side Trim - দুই পাশই ছাঁটা):
+-- এটি লেখার বাম এবং ডান—দুই পাশেরই সব বাড়তি স্পেস একসাথে কেটে একদম পরিষ্কার করে দেবে।
+
+-- CONCAT() = string data ke concatenate kore (string data ke join kore)
+
+
 
 SELECT 
 
@@ -173,7 +182,16 @@ LOWER(full_name) AS lower_name,
 UPPER(full_name) AS upper_name,
 CHAR_LENGTH(full_name) AS char_l,
 LENGTH(full_name) AS bytes_l,
-REVERSE(full_name) AS reverse_name
+REVERSE(full_name) AS reverse_name,
+
+TRIM(full_name) AS trim_name,
+LTRIM(full_name) AS ltrim_name,
+RTRIM(full_name) AS rtrim_name,
+
+
+CONCAT(full_name,'-Employee') AS concat_name,
+CONCAT(full_name,'-', salary) AS salary_name,
+CONCAT(full_name,'-', salary,'-', date_of_joining) AS salary_name_date
 
 
 
