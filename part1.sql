@@ -152,3 +152,29 @@ VALUES ('Jannatul Nayeem',30000,'2026-01-15');
 
 
 
+
+-- *** SQL String Manipulations & Formating  ***
+
+-- SELECT * FROM employees;
+
+-- ouery alias = column name change korar jonno use kora hoy
+
+-- SQL String Manipulations & Formating  = SQL string functions use kore string data ke manipulate kora hoy 
+-- LOWER() = string data ke lower case e convert kore
+-- UPPER() = string data ke upper case e convert kore
+-- CHAR_LENGTH() = string data er character length ber kore
+-- LENGTH() = string data er byte length ber kore
+-- REVERSE() = string data ke reverse kore
+
+SELECT 
+
+full_name,
+LOWER(full_name) AS lower_name,
+UPPER(full_name) AS upper_name,
+CHAR_LENGTH(full_name) AS char_l,
+LENGTH(full_name) AS bytes_l,
+REVERSE(full_name) AS reverse_name
+
+
+
+FROM employees;
