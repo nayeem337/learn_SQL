@@ -173,11 +173,20 @@ VALUES ('Jannatul Nayeem',30000,'2026-01-15');
 
 -- CONCAT() = string data ke concatenate kore (string data ke join kore)
 
+-- REPLACE() = string data er specific character ke replace kore
+-- SUBSTRING() = string data er specific part ke ber kore
+
+
 
 
 SELECT 
 
 full_name,
+
+REPLACE(full_name,'A','@') AS replaced_name,
+SUBSTRING(full_name FROM 1 FOR 3) AS substring_name,
+
+
 LOWER(full_name) AS lower_name,
 UPPER(full_name) AS upper_name,
 CHAR_LENGTH(full_name) AS char_l,
@@ -192,7 +201,6 @@ RTRIM(full_name) AS rtrim_name,
 CONCAT(full_name,'-Employee') AS concat_name,
 CONCAT(full_name,'-', salary) AS salary_name,
 CONCAT(full_name,'-', salary,'-', date_of_joining) AS salary_name_date
-
 
 
 FROM employees;
