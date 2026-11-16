@@ -267,3 +267,55 @@ COUNT(DISTINCT salary) AS unique_salary
 
 FROM employees;
 
+
+-------------------------------------------------------------------------------------------------------------
+
+
+
+-- *** SQL Mathematical Functions  ***
+
+ -- ROUND() = Doshomiker pore .50 ba tar beshi thakle porer purno songkhay jabe, ar .50 er kom thakle ager purno songkhay thakbe (Ex: 30000.60 -> 30001, 30000.40 -> 30000)
+
+-- ROUND() = decimal value ke round kore nearest integer e convert kore
+-- ROUND .5 > 1 ghor barabe, .5 < 0 er kom hole 1 ghor komabe
+-- ROUND() korle jodi doshomik er porer ghor .5 er beshi hole 1 ghor barabe, .5 er kom hole 1 ghor komabe.
+
+ -- CEIL() / CEILING() = Doshomiker pore samanno kichu thakleo (.01 holeo) জোর kore uporer purno songkhay niye jabe (Ex: 30000.10 -> 30001)
+
+-- CEIL() = decimal value ke round kore nearest integer e convert kore (Always round up)
+-- CEIL() korle jodi doshomik er porer ghor .5 er beshi hole 1 ghor barabe, .5 er kom holeo 1 ghor barabe. Always round up.
+
+-- FLOOR() = Doshomiker pore ja-i thakuk (.99 holeo) ta kete fele nicher/ager purno songkhay rakhe (Ex: 30000.99 -> 30000)
+
+-- FLOOR() = decimal value ke round kore nearest integer e convert kore (Always round down)
+-- FLOOR() = korle doshmik er pore jay thak ta bad pore jabe!
+
+
+ --  Arithmetic Operations (Jog, Biyog, Gun, Bhag)
+
+  -- Multiplication (*) = Mul salary-ke 2 diye gun kore dekhabe (Double salary)
+   -- Addition (+) = Mul salary-r sathe 200 taka jog kore dekhabe (Bonus add)
+   -- Subtraction (-) = Mul salary theke 200 taka biyog kore dekhabe (Penalty/Tax deduction)
+   -- Division (/) = Mul salary-ke 200 diye bhag kore bhagfol dekhabe
+
+
+
+SELECT
+
+ROUND(salary) AS round_salary,
+CEIL(salary) AS ceil_salary,
+FLOOR(salary) AS floor_salary,
+
+
+salary*2 AS salary_mul, 
+salary+200 AS salary_add,
+salary-200 AS salary_sub,
+salary/200 AS salary_division
+
+FROM employees;
+
+
+
+
+
+
