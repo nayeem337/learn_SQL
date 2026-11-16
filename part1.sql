@@ -228,3 +228,42 @@ FROM employees;
 
 
 -------------------------------------------------------------------------------------------------------------
+
+
+-- *** SQL Aggregate Functions  ***
+
+-- SELECT * FROM employees;
+
+-- MIN() = minimum value ber kore
+-- MAX() = maximum value ber kore
+-- AVG() = average value ber kore
+-- SUM() = total value ber kore
+-- COUNT() = total number of rows ber kore
+-- DISTINCT = unique values ber kore
+-- COUNT(DISTINCT) = unique values er total number ber kore
+-- COUNT(DISTINCT salary)-এর কাজ: এটি ইউনিক বেতনগুলোর তালিকা না দেখিয়ে, টেবিলে মোট কয় ধরনের ইউনিক বেতন আছে তার সংখ্যা গণনা করে।
+
+
+
+SELECT 
+
+MIN(salary) AS min_salary,
+MAX(salary) AS max_salary,
+AVG(salary) AS avg_salary,
+SUM(salary) AS total_salary,
+COUNT(*) AS total_rows
+
+FROM employees;
+
+
+SELECT DISTINCT salary FROM employees;
+
+
+
+SELECT
+
+COUNT(DISTINCT salary) AS unique_salary
+
+
+FROM employees;
+
