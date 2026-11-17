@@ -63,7 +63,7 @@ CASE
     ELSE 'Employee'
 
    
-END AS rile_type
+END AS role_type
 
 
 FROM employees;
