@@ -49,3 +49,21 @@ SELECT full_name,salary,
  FROM employees;
 
 
+
+-- ============================================================================
+-- *** CASE কুয়েরি 
+-- ============================================================================
+-- উদাহরণ: পদবি (designation) দেখে কে 'Management' আর কে 'Employee' তা বের করা।
+-- তোমার টেবিলে কলামের নাম 'name' এর বদলে 'full_name' দেওয়া আছে, তাই নিচে 'full_name' ব্যবহার করা হয়েছে।
+
+SELECT full_name,salary,designation,
+
+CASE 
+    WHEN designation LIKE '%Manager%' THEN 'Management'
+    ELSE 'Employee'
+
+   
+END AS rile_type
+
+
+FROM employees;
