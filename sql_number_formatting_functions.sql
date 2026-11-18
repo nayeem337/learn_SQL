@@ -1,4 +1,8 @@
+-- ============================================
 -- SQL Fumber Formatting_function
+-- ============================================
+
+
 
 -- Decimal Round
 
@@ -38,7 +42,6 @@ SELECT ROUND(salary, 4) AS rounded_salary FROM employees;
 
 
 -- ============================================
--- SQL NUMBER FORMATTING FUNCTIONS
 -- NEAREST INTEGER
 -- ============================================
 
@@ -70,7 +73,6 @@ SELECT FLOOR(10.7);
 
 
 -- ============================================
--- SQL NUMBER FORMATTING FUNCTIONS
 -- DECIMAL TRUNCATION
 -- ============================================
 
@@ -98,5 +100,107 @@ SELECT TRUNC(1234.345678, 2);
 --মনে রাখবে:
 -- ROUND() → Decimal value round করে।
 -- TRUNC() → অতিরিক্ত decimal digits কেটে বাদ দেয়, rounding করে না।
+
+
+
+-- ============================================
+-- ABSOLUTE VALUE
+-- ============================================
+
+-- ABS():
+-- কোনো numeric value-এর absolute value (পরম মান) return করে।
+-- অর্থাৎ, negative number-কে positive number-এ রূপান্তর করে
+-- এবং positive number-এর value অপরিবর্তিত রাখে।
+--
+-- Syntax: ABS(number)
+-- number = যে সংখ্যাটির absolute value বের করতে হবে।
+--
+-- Example:
+-- -500-এর absolute value হলো 500।
+-- Result: 500
+
+SELECT ABS(-500);
+
+-- Negative number: -500 থেকে 500 return করবে।
+SELECT ABS(-500);
+
+-- Positive number: 500 অপরিবর্তিত থাকবে।
+SELECT ABS(500);
+
+-- Zero: 0 অপরিবর্তিত থাকবে।
+SELECT ABS(0);
+
+
+
+
+-- ============================================
+-- REMAINDER (ভাগশেষ) MOD() 
+-- ============================================
+
+-- MOD():
+-- কোনো একটি সংখ্যাকে অন্য একটি সংখ্যা দিয়ে ভাগ করার পর
+-- যে ভাগশেষ (Remainder) অবশিষ্ট থাকে, তা return করে।
+--
+-- Syntax: MOD(dividend, divisor)
+-- dividend = যে সংখ্যাটিকে ভাগ করা হবে।
+-- divisor  = যে সংখ্যা দিয়ে ভাগ করা হবে।
+--
+-- Example:
+-- 10 কে 3 দিয়ে ভাগ করলে ভাগফল 3 এবং ভাগশেষ 1 হবে।
+-- Result: 1
+
+SELECT MOD(10, 3);
+
+
+-- 10 কে 3 দিয়ে ভাগ করলে ভাগশেষ 1।
+SELECT MOD(10, 3);
+
+-- 15 কে 5 দিয়ে ভাগ করলে কোনো ভাগশেষ থাকবে না।
+SELECT MOD(15, 5);
+
+-- 17 কে 4 দিয়ে ভাগ করলে ভাগশেষ 1।
+SELECT MOD(17, 4);
+
+
+
+-- ============================================
+-- COMMA FORMATTING - TO_CHAR() 
+-- ============================================
+
+-- TO_CHAR() - Comma Formatting:
+-- কোনো numeric value-কে নির্দিষ্ট format অনুযায়ী
+-- comma separator ব্যবহার করে formatted text (VARCHAR) হিসেবে return করে।
+--
+-- Syntax: TO_CHAR(number, format)
+-- number = যে সংখ্যাটিকে format করতে হবে।
+-- format = সংখ্যাটি কীভাবে display হবে তার format pattern।
+--
+-- Example:
+-- 1234567.89 সংখ্যাটিকে comma separator দিয়ে
+-- 2 decimal places সহ display করবে।
+-- Result: 1,234,567.89
+
+SELECT TO_CHAR(1234567.89, '9,999,999.99');
+
+
+-- ============================================
+-- TO_CHAR() - CURRENCY FORMATTING
+-- ============================================
+
+-- TO_CHAR() - Currency Formatting:
+-- কোনো numeric value-কে নির্দিষ্ট currency symbol ব্যবহার করে
+-- formatted text (VARCHAR) হিসেবে return করে।
+--
+-- Syntax: TO_CHAR(number, currency_format)
+-- number          = যে সংখ্যাটিকে format করতে হবে।
+-- currency_format = currency symbol এবং digit-এর format pattern।
+--
+-- Example:
+-- 55000 সংখ্যাটিকে Dollar ($) symbol সহ display করবে।
+-- Result: $55,000
+
+SELECT TO_CHAR(55000, '$99,999');
+
+
 
 
