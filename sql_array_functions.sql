@@ -92,3 +92,111 @@ SELECT ARRAY_LENGTH(ARRAY['HTML', 'CSS', 'JavaScript'], 1);
 
 
 
+-- ==========================================
+-- ARRAY_APPEND()
+-- ==========================================
+
+-- ARRAY_APPEND() Function ব্যবহার করে একটি Array-এর শেষে
+-- নতুন একটি Element যোগ করা যায়।
+
+-- Syntax:
+-- ARRAY_APPEND(Array, New_Element)
+
+-- এখানে 'Database' Element-টি Array-এর শেষে যোগ করা হয়েছে।
+-- Result: {HTML,CSS,JavaScript,Database}
+
+SELECT ARRAY_APPEND(ARRAY['HTML', 'CSS', 'JavaScript'], 'Database');
+
+
+-- ==========================================
+-- ARRAY_PREPEND()
+-- ==========================================
+
+-- ARRAY_PREPEND() Function ব্যবহার করে একটি Array-এর শুরুতে
+-- নতুন একটি Element যোগ করা যায়।
+
+-- Syntax:
+-- ARRAY_PREPEND(New_Element, Array)
+
+-- এখানে 'Database' Element-টি Array-এর শুরুতে যোগ করা হয়েছে।
+-- Result: {Database,HTML,CSS,JavaScript}
+
+SELECT ARRAY_PREPEND('Database', ARRAY['HTML', 'CSS', 'JavaScript']);
+
+
+-- ==========================================
+-- ARRAY_REMOVE()
+-- ==========================================
+
+-- ARRAY_REMOVE() Function ব্যবহার করে একটি Array থেকে
+-- নির্দিষ্ট Value-এর সবগুলো Element সরিয়ে ফেলা যায়।
+
+-- Syntax:
+-- ARRAY_REMOVE(Array, Value)
+
+-- এখানে Array থেকে 'CSS' Value-টি সরিয়ে ফেলা হয়েছে।
+-- Result: {HTML,JavaScript}
+
+SELECT ARRAY_REMOVE(ARRAY['HTML', 'CSS', 'JavaScript'], 'CSS');
+
+
+-- ==========================================
+-- ARRAY_POSITION()
+-- ==========================================
+
+-- ARRAY_POSITION() Function ব্যবহার করে একটি Array-এর মধ্যে
+-- নির্দিষ্ট Value কোন Position-এ রয়েছে তা জানা যায়।
+-- PostgreSQL Array-এর Position সাধারণত 1 থেকে শুরু হয়।
+-- Value খুঁজে না পাওয়া গেলে NULL Return করে।
+
+-- Syntax:
+-- ARRAY_POSITION(Array, Search_Element)
+
+-- এখানে 'HTML' Element-টি Array-এর প্রথম Position-এ রয়েছে।
+-- Result: 1
+
+SELECT ARRAY_POSITION(ARRAY['HTML', 'CSS', 'JavaScript'], 'HTML');
+
+
+-- ==========================================
+-- UNNEST()
+-- ==========================================
+
+-- UNNEST() Function ব্যবহার করে একটি Array-এর Element-গুলোকে
+-- আলাদা আলাদা Row-তে রূপান্তর করা যায়।
+-- অর্থাৎ, একটি Array-কে একাধিক Row-তে Convert করা হয়।
+
+
+-- Converting Array Elements into Rows
+-- এখানে একটি Array-এর তিনটি Element-কে আলাদা তিনটি Row-তে দেখানো হয়েছে।
+-- Result:
+-- HTML
+-- CSS
+-- JavaScript
+
+SELECT UNNEST(ARRAY['HTML', 'CSS', 'JavaScript']);
+
+
+-- Converting Multiple Array Elements into Rows
+-- এখানে একটি Array-এর ছয়টি Element-কে আলাদা ছয়টি Row-তে দেখানো হয়েছে।
+-- Result:
+-- A
+-- B
+-- C
+-- D
+-- E
+-- F
+
+SELECT UNNEST(ARRAY['A', 'B', 'C', 'D', 'E', 'F']);
+
+
+
+-- Function	         কাজ
+
+-- ARRAY_APPEND()	Array-এর শেষে Element যোগ করে
+-- ARRAY_PREPEND()	Array-এর শুরুতে Element যোগ করে
+-- ARRAY_REMOVE()	Array থেকে নির্দিষ্ট Value সরিয়ে দেয়
+-- ARRAY_POSITION()	নির্দিষ্ট Value-এর Position বের করে
+-- UNNEST()	Array-এর Element-গুলোকে আলাদা Row-তে রূপান্তর করে
+
+
