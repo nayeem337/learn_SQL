@@ -90,10 +90,10 @@ SELECT FLOOR(10.7);
 
 SELECT TRUNC(1234.345678, 2);
 
---ROUND() vs TRUNC()
---Function	Input	    Result
-ROUND(1234.345678, 2)	1234.345678	1234.35
-TRUNC(1234.345678, 2)	1234.345678	1234.34
+-- ROUND() vs TRUNC()
+-- Function	Input	    Result
+-- ROUND(1234.345678, 2)	1234.345678	1234.35
+-- TRUNC(1234.345678, 2)	1234.345678	1234.34
 
 --মনে রাখবে:
 -- ROUND() → Decimal value round করে।
