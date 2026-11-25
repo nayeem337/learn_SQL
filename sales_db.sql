@@ -1,18 +1,18 @@
 CREATE TABLE users(
-    id BIGSERIAL PRIMARY KEY 
-
-
-
-
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    id BIGSERIAL PRIMARY KEY, 
+    firstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
+    email VARCHAR(50) UNIQUE NOT NULL,
+    mobile VARCHAR(15) NOT NULL,
+    password VARCHAR(500) NOT NULL,
+    otp VARCHAR(10) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-
-
 );
 
 
 CREATE TABLE categories(
-    id BIGSERIAL PRIMARY KEY
+    id BIGSERIAL PRIMARY KEY,
 
 
 
@@ -26,7 +26,7 @@ CREATE TABLE categories(
 
 
 CREATE TABLE customers(
-    id BIGSERIAL PRIMARY KEY
+    id BIGSERIAL PRIMARY KEY,
 
 
 
@@ -39,7 +39,7 @@ CREATE TABLE customers(
 
 
 CREATE TABLE products(
-    id BIGSERIAL PRIMARY KEY
+    id BIGSERIAL PRIMARY KEY,
 
 
 
@@ -52,7 +52,7 @@ CREATE TABLE products(
 
 
 CREATE TABLE invoices(
-    id BIGSERIAL PRIMARY KEY
+    id BIGSERIAL PRIMARY KEY,
 
 
 
@@ -65,7 +65,7 @@ CREATE TABLE invoices(
 
 
 CREATE TABLE invoice_products(
-    id BIGSERIAL PRIMARY KEY
+    id BIGSERIAL PRIMARY KEY,
 
 
 
